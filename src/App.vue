@@ -1,12 +1,31 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/">Irene's Snack Bar</router-link>
+      <router-link to="/about">login</router-link>
     </div>
+    <!-- swiper 轮播图 -->
+    <!-- 频道入口 -->
+    <!-- 首页商品区 -->
     <router-view />
+    <!-- 回到顶部 -->
+    <goTop :btnFlag="btnFlag"></goTop>
   </div>
 </template>
+
+<script>
+import goTop from "@components/public/goTop";
+export default {
+  data() {
+    return {
+      btnFlag: false
+    };
+  },
+  components: {
+    goTop
+  }
+};
+</script>
 
 <style lang="scss">
 #app {
@@ -18,11 +37,15 @@
 }
 
 #nav {
-  padding: 30px;
+  padding: 10px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
 
   a {
     font-weight: bold;
     color: #2c3e50;
+    font-size: 16px;
 
     &.router-link-exact-active {
       color: #42b983;
