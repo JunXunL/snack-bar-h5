@@ -1,4 +1,11 @@
 const path = require("path");
+const env = process.env.npm_config_env; // process.env属性返回的是一个包含用户环境信息的对象，可以区分开发环境或正式环境的依据
+let nodeServer = "http://localhost:3000";
+if (env === "product") {
+  nodeServer = "http://localhost:3333";
+} else {
+  nodeServer = "http://localhost:3000";
+}
 module.exports = {
   configureWebpack: config => {
     // 目录引用简写
@@ -7,6 +14,7 @@ module.exports = {
       "@public": path.resolve(__dirname, "public"), // public 文件夹
       "@assets": path.resolve(srcDir, "assets"),
       "@components": path.resolve(srcDir, "components"),
+      "@constants": path.resolve(srcDir, "constants"),
       "@store": path.resolve(srcDir, "store")
     };
     Object.assign(config.resolve.alias, aliasExt);
@@ -34,7 +42,7 @@ module.exports = {
     // assetsPublicPath: './snackbar/',
     proxy: {
       "/api": {
-        target: "http://localhost:3000", // nodejs服务器地址
+        target: nodeServer, // nodejs服务器地址
         changeOrigin: true, // 是否允许跨越
         pathRewrite: {
           // 重写，用/api代替target值，如'/api/user/add'

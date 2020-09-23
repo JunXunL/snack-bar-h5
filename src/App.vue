@@ -5,6 +5,7 @@
       <router-link to="/about">login</router-link>
     </div>
     <!-- swiper 轮播图 -->
+    <swiper></swiper>
     <!-- 频道入口 -->
     <!-- 首页商品区 -->
     <router-view />
@@ -15,6 +16,7 @@
 
 <script>
 import goTop from "@components/public/goTop";
+import swiper from "@components/public/swiper";
 export default {
   data() {
     return {
@@ -22,7 +24,8 @@ export default {
     };
   },
   components: {
-    goTop
+    goTop,
+    swiper
   }
 };
 </script>
