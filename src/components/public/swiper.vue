@@ -1,22 +1,34 @@
 <template>
-  <div>
-    <!-- 11 -->
+  <!-- 轮播图组件 -->
+  <div id="swipe">
+    <van-swipe :autoplay="3000" :height="200">
+      <van-swipe-item
+        v-for="(image, index) in images"
+        :key="index + new Date()"
+      >
+        <img :src="$imgDomain + image.s_url" />
+        <!-- <img :v-lazy="$imgDomain + image.s_url" /> -->
+      </van-swipe-item>
+    </van-swipe>
   </div>
 </template>
 <script>
 import axios from "axios";
-// import Vue from "vue";
-// import { Swipe, SwipeItem } from "vant";
+import { Swipe, SwipeItem } from "vant";
 export default {
-  //   components: {
-  //     Swipe,
-  //     SwipeItem
-  //   },
+  components: {
+    [Swipe.name]: Swipe,
+    [SwipeItem.name]: SwipeItem
+    // [Lazyload.name]: Lazyload
+  },
   data() {
-    return {};
+    return {
+      images: []
+    };
   },
   mounted() {
-    this.getInfo();
+    // this.getInfo(); // 测试，是否访问到nodeServer服务器资源
+    this.getData();
   },
   methods: {
     getInfo() {
@@ -27,13 +39,26 @@ export default {
           console.log("---------空-------------------");
         }
       });
+    },
+    getData() {
+      axios.get("/api/fileUpload/showImages/swipe", {}).then(res => {
+        if (res.data) {
+          this.images = JSON.parse(JSON.stringify(res.data.content));
+          console.log(this.images);
+        } else {
+          console.log("---------空-------------------");
+        }
+      });
     }
   }
 };
 </script>
 <style lang="scss" scoped>
-* {
-  display: flex;
-  flex-flow: column;
+#swipe {
+  .van-swipe-item {
+    img {
+      width: 100%;
+    }
+  }
 }
 </style>
