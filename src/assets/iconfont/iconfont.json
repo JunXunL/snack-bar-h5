@@ -1,0 +1,44 @@
+{
+  "id": "2093286",
+  "name": "snack-bar-h5",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "688060",
+      "name": "查找 表单 列表",
+      "font_class": "chazhaobiaodanliebiao",
+      "unicode": "e76a",
+      "unicode_decimal": 59242
+    },
+    {
+      "icon_id": "1155944",
+      "name": "我的",
+      "font_class": "wode01",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "5072216",
+      "name": "甜点",
+      "font_class": "cake",
+      "unicode": "e666",
+      "unicode_decimal": 58982
+    },
+    {
+      "icon_id": "508256",
+      "name": "食品",
+      "font_class": "shipin",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "13106275",
+      "name": "食品饮料",
+      "font_class": "shipinyinliao",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    }
+  ]
+}
