@@ -7,6 +7,9 @@
     <!-- swiper 轮播图 -->
     <swiper></swiper>
     <!-- 频道入口 -->
+    <div>
+      <i class="iconfont icon-shipin"></i>
+    </div>
     <!-- 首页商品区 -->
     <router-view />
     <!-- 回到顶部 -->
