@@ -50,5 +50,20 @@ module.exports = {
         }
       }
     }
+  },
+  css: {
+    loaderOptions: {
+      postcss: {
+        // vue-cli3.x项目引入vant-ui1.6.21，要求在项目中使用rem单位，但vant是px的。
+        // 故，需要添加一个自动转换插件和一段修改html根元素的font-size值的脚本
+        plugins: [
+          require("postcss-pxtorem")({
+            // 换算基数
+            rootValue: 35.5, // 16px = 0.4507rem; 基数是100：16px = 0.16rem
+            propList: ["*"]
+          })
+        ]
+      }
+    }
   }
 };
