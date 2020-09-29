@@ -27,10 +27,11 @@ module.exports = {
   },
   devServer: {
     open: true, // 是否自动启动浏览器
-    // host: 'localhost',
-    // port: 8080,
+    hot: true, // 保存后自动刷新浏览器，要配合host: 'localhost',port: 8080,
+    host: "localhost",
+    port: 8080,
     // https: true,
-    disableHostCheck: true, // 不校验host，可以自定义hosts
+    // disableHostCheck: true, // 不校验host，可以自定义hosts
     // Paths
     // assetsRoot : 在当前目录的上一级 的 dist目录下输出资源文件
     // assetsSubDirectory: 把所有的静态资源打包到 dist下的 assets文件夹下
