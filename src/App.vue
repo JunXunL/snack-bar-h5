@@ -7,8 +7,19 @@
     <!-- swiper 轮播图 -->
     <swiper></swiper>
     <!-- 频道入口 -->
-    <div>
-      <i class="iconfont icon-shipin"></i>
+    <div id="channel" class="flex-row">
+      <div class="channel content-box flex-column">
+        <i class="iconfont icon-shipin channel-img title size-f-t"></i>
+        <span class="channel-title title size-30">食品</span>
+      </div>
+      <div class="channel content-box flex-column">
+        <i class="iconfont icon-shipin channel-img title size-f-t"></i>
+        <span class="channel-title title size-f-t">食品</span>
+      </div>
+      <div class="channel content-box flex-column">
+        <i class="iconfont icon-shipin channel-img title size-f-t"></i>
+        <span class="channel-title title size-f-t">食品</span>
+      </div>
     </div>
     <!-- 首页商品区 -->
     <router-view />
@@ -51,11 +62,18 @@ export default {
   a {
     font-weight: bold;
     color: #2c3e50;
-    font-size: 16px;
+    font-size: $sLevelTitle;
 
     &.router-link-exact-active {
       color: #42b983;
     }
+  }
+}
+
+#channel {
+  .channel {
+    width: 200px;
+    height: 200px;
   }
 }
 </style>

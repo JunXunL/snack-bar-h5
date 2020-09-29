@@ -1,0 +1,23 @@
+body { font: 12px Avenir, Helvetica, Arial, sans-serif; }
+
+/* 设置标题 */
+.title {font-family: "微软雅黑"; font-weight: bold; color: #000; letter-spacing: 2px; cursor: pointer;}
+
+
+/* 设置字体 */
+.size-f-t {font-size: $fLevelTitle;} /* 50px 一级标题 */
+.size-s-t {font-size: $sLevelTitle;} /* 36px 二级标题 */
+.size-paragraph {font-size: $paragraphFont;} /* 28px 段落 */
+.size-s {font-size: $smallFont;} /* 24px 小号字体 */
+.size-30 {font-size: 30px;}
+.induction {font-family: "微软雅黑"; color: #222; letter-spacing: 1px; cursor: pointer;font-size: 14px;line-height: 20px;text-align: left;width: 100%;text-overflow: ellipsis;overflow: hidden;}
+
+
+
+
+/* 设置容器 */
+.main-box { display: block;} /* 设置最外层的容器 */
+.content-box {display: block;} /* 设置包含文字的容器 */
+.content {display: block; padding: 10px;} /* 设置文字的容器 */
+.flex-row { display: flex; flex-flow: row wrap; justify-self: flex-start;}
+.flex-column { display: flex; flex-flow: column; justify-self: flex-start;}

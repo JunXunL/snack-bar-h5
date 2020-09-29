@@ -11,6 +11,7 @@ module.exports = {
     // 目录引用简写
     const srcDir = path.resolve(__dirname, "src");
     const aliasExt = {
+      // @ 是 src/ 的别名
       "@public": path.resolve(__dirname, "public"), // public 文件夹
       "@assets": path.resolve(srcDir, "assets"),
       "@components": path.resolve(srcDir, "components"),
@@ -52,6 +53,7 @@ module.exports = {
     }
   },
   css: {
+    // css预设器配置项
     loaderOptions: {
       postcss: {
         // vue-cli3.x项目引入vant-ui1.6.21，要求在项目中使用rem单位，但vant是px的。
@@ -63,6 +65,26 @@ module.exports = {
             propList: ["*"]
           })
         ]
+      },
+      // 给 sass-loader 传递选项
+      sass: {
+        // prependData: `@import "~@/variables.sass"` // 默认情况下 `sass` 选项会同时对 `sass` 和 `scss` 语法同时生效，`scss` 语法要求语句结尾必须有分号，而`sass` 则要求必须没有分号
+        // 在这种情况下，我们可以使用 `scss` 选项，对 `scss` 语法进行单独配置
+        // scss: { // `scss` 语法在内部也是由 sass-loader 处理的
+        prependData: `@import "@assets/style/fontSize.scss";`
+      },
+      // 给 less-loader 传递 Less.js 相关选项
+      less: {
+        // http://lesscss.org/usage/#less-options-strict-units `Global Variables`
+        // `primary` is global variables fields name
+        globalVars: {
+          // 全局设置
+          // primary: '#fff'
+        },
+        modifyVars: {
+          // 修改
+          // 'font-size-sm': '14px'
+        }
       }
     }
   }
