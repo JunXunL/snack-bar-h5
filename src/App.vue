@@ -7,20 +7,7 @@
     <!-- swiper 轮播图 -->
     <swiper></swiper>
     <!-- 频道入口 -->
-    <div id="channel" class="flex-row">
-      <div class="channel content-box flex-column">
-        <i class="iconfont icon-shipin channel-img title size-f-t"></i>
-        <span class="channel-title title size-30">食品</span>
-      </div>
-      <div class="channel content-box flex-column">
-        <i class="iconfont icon-shipin channel-img title size-f-t"></i>
-        <span class="channel-title title size-f-t">食品</span>
-      </div>
-      <div class="channel content-box flex-column">
-        <i class="iconfont icon-shipin channel-img title size-f-t"></i>
-        <span class="channel-title title size-f-t">食品</span>
-      </div>
-    </div>
+    <channel></channel>
     <!-- 首页商品区 -->
     <router-view />
     <!-- 回到顶部 -->
@@ -31,6 +18,7 @@
 <script>
 import goTop from "@components/public/goTop";
 import swiper from "@components/public/swiper";
+import channel from "@components/public/channel";
 export default {
   data() {
     return {
@@ -39,11 +27,11 @@ export default {
   },
   components: {
     goTop,
-    swiper
+    swiper,
+    channel
   }
 };
 </script>
-
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -67,13 +55,6 @@ export default {
     &.router-link-exact-active {
       color: #42b983;
     }
-  }
-}
-
-#channel {
-  .channel {
-    width: 200px;
-    height: 200px;
   }
 }
 </style>

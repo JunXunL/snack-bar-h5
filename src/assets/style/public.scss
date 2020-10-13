@@ -19,5 +19,5 @@ body { font: 12px Avenir, Helvetica, Arial, sans-serif; }
 .main-box { display: block;} /* 设置最外层的容器 */
 .content-box {display: block;} /* 设置包含文字的容器 */
 .content {display: block; padding: 10px;} /* 设置文字的容器 */
-.flex-row { display: flex; flex-flow: row wrap; justify-self: flex-start;}
-.flex-column { display: flex; flex-flow: column; justify-self: flex-start;}
+.flex-row { display: flex; flex-flow: row wrap; justify-self: flex-start; }
+.flex-column { display: flex; flex-flow: column; justify-self: flex-start; justify-content: center; align-items: center;}
